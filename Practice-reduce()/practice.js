@@ -77,3 +77,33 @@ function total7(array) {
 }
 console.log(total7(numeros7))
 
+////add
+const numbers4 = [2, 5, 8, 10]
+
+function suma(array) {
+    return array.reduce((acumulador, valorActual) =>
+        acumulador + valorActual
+        , 0)
+}
+console.log(suma(numbers4))
+
+///mult numbers4
+function multi(array) {
+    return array.reduce((acumulador, valorActual) =>
+        acumulador * valorActual)
+}
+console.log(multi(numbers4))
+
+///find biggest
+const numbers5 = [12, 45, 23, 67, 34]
+
+function mayor(array) {
+    return array.reduce((acumulador, valorActual) => {
+        if (valorActual > acumulador) {
+            acumulador = valorActual
+        }
+        return acumulador
+    }, 0)
+
+}
+console.log(mayor(numbers5))

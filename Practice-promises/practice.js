@@ -135,7 +135,7 @@ async function obtenerDetallesDeUnUsuario(id) {
         console.log("Error al obtener los datos")
     }
 }
-obtenerDetallesDeUnUsuario(1) //filtramos por id
+obtenerDetallesDeUnUsuario(1) //filter by id
 
 //////////////////////// w/callback
 const doAsyncWithCallback = (num3, num4, callback) => {
@@ -161,6 +161,77 @@ const doAsyncWithPromises = (num1, num2) => {
 doAsyncWithPromises(2, 4)
     .then(result => console.log(result))
 
+
+///success
+const promesa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        const exito = true
+        if (exito) {
+            resolve("exito")
+        } else {
+            reject("fallo")
+        }
+    }, 3000)
+})
+promesa
+    .then((resultado) => {
+        console.log(resultado)
+    })
+    .catch((error) => {
+        console.error(error)
+    })
+
+
+////error
+const promesa2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        const exito2 = false
+        if (exito2) {
+            resolve("exito")
+        } else {
+            reject("fallo")
+        }
+    })
+})
+promesa2
+    .then((resultado) => {
+        console.log(resultado)
+    })
+    .catch((error) => {
+        console.error(error)
+    })
+
+
+///
+const miPromesa = new Promise((resolve) => {
+    setTimeout(() => resolve("Resultado de la promesa"), 2000);
+});
+
+async function manejarPromesa() {
+    const resultado = await miPromesa;
+    console.log(resultado);
+}
+manejarPromesa();
+
+///
+const promesa4 = new Promise((resolve) => setTimeout(() => resolve("Promesa 4"), 1000));
+const promesa5 = new Promise((resolve) => setTimeout(() => resolve("Promesa 5"), 2000));
+const promesa6 = new Promise((resolve) => setTimeout(() => resolve("Promesa 6"), 3000));
+
+async function manejarPromesas() {
+    const resultado4 = await promesa4;
+    const resultado5 = await promesa5;
+    const resultado6 = await promesa6;
+    console.log(resultado4);
+    console.log(resultado5);
+    console.log(resultado6);
+}
+
+manejarPromesas();
+
+///promise all
+Promise.all([promesa4, promesa5, promesa6])
+    .then((resultados) => console.log(resultados))
 
 
 

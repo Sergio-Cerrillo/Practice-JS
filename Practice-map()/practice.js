@@ -357,6 +357,28 @@ const faren = temperaturasCelsius.map(tem => (tem * 9 / 5) + 32)
 
 console.log(faren)
 
+////x2
+const numbers5 = [1, 2, 3, 4]
+const numbersX2 = numbers5.map(num => num * 2)
+console.log(numbersX2)
+
+////add "hola"
+const names2 = ['Carlos', 'Ana', 'Sofia']
+const namesSaludos = names2.map(name => (
+  "hola " + name
+)
+)
+console.log(namesSaludos)
+
+////only lastName
+const people2 = [
+  { firstName: 'Carlos', lastName: 'Gómez' },
+  { firstName: 'Ana', lastName: 'Pérez' },
+  { firstName: 'Sofía', lastName: 'Martínez' }
+];
+
+const apellidos = people2.map(pers => pers.lastName)
+console.log(apellidos)
 
 
 

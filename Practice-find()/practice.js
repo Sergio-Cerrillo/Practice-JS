@@ -31,7 +31,29 @@ const productos = [
 const checkStock = productos.find(producto => producto.stock > 0)
 console.log(checkStock)
 
-////PRIMER STRING CON MAS DE 10 CARACTERES
+////first with >10char
 const frutas = ["manzana", "plátano", "fresasuperlonga", "cereza"]
 const checkFrutas = frutas.find(fruta => fruta.length > 10)
 console.log(checkFrutas)
+
+////find first > 10
+const numbers6 = [1, 5, 10, 15, 20];
+
+const mayor2 = numbers6.find(num => num > 10)
+console.log(mayor2)
+
+
+////first name starts w"A"
+const names3 = ['Carlos', 'Ana', 'Pedro', 'Lucía'];
+
+const inicial = names3.find(name => name.charAt(0) === "A")
+console.log(inicial)
+
+////first id>100
+const items = [
+    { id: 50, name: 'item1' },
+    { id: 120, name: 'item2' },
+    { id: 85, name: 'item3' }
+];
+const itemMayor = items.find(item => item.id > 100)
+console.log(itemMayor)
